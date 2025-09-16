@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Adventures - Travel Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+     </style>
+</head>
+<body>
+    <div class="hero-section">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="broke">THE BROKE</span>
+                <span>BACKPACKER</span>
+            </div>
+            <ul class="nav-links">
+                <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#destinations" class="nav-link">Destinations</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+                <li><a href="#tours" class="tours-btn">▷ Tours with Us ◁</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-content">
+            <div class="content-wrapper">
+                <div class="hero-text">
+                    <p class="welcome-text">Welcome to The Broke Backpacker!</p>
+                    <h1 class="main-headline">Travel the WORLD on<br>$10/Day</h1>
+                    <p class="subheadline">Grab a free copy of the ultimate Backpacker Bible to learn our top tips/tricks<br>for seeing the world without breaking the bank.</p>
+                </div>
+                
+                <form class="signup-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="consent" required>
+                        <label for="consent">I consent to my personal information being processed in accordance with The Broke Backpacker's <a href="#privacy" class="privacy-link">Privacy Policy</a></label>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">Get Your FREE Copy</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="backpacker-figure"></div>
+    </div>
+
+    <script>
+        // Simple form submission handler
+        document.querySelector('.signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const firstName = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const consent = this.querySelector('input[type="checkbox"]').checked;
+            
+            if (firstName && email && consent) {
+                alert('Thank you! Your free Backpacker Bible is on its way to your inbox!');
+                this.reset();
+            } else {
+                alert('Please fill in all fields and accept the privacy policy.');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add some interactive effects
+        document.querySelector('.cta-button').addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 5px 15px rgba(231, 76, 60, 0.4)';
+        });
+
+        document.querySelector('.cta-button').addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = 'none';
+        });
+        
+    </script>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-globe"></i> The Broke BackPacker</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#destinations" class="nav-link">Destinations</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search destinations, adventures, tips...">
+                    <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Posts -->
+        <div class="featured-posts">
+            <div class="container">
+                <h2>Latest Adventures</h2>
+                <div class="posts-grid">
+                    <article class="post-card featured">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop" alt="Mountain Adventure">
+                            <div class="post-category">Adventure</div>
+                        </div>
+                        <div class="post-content">
+                            <h3>Conquering the Swiss Alps</h3>
+                            <div class="post-meta">
+                                <span><i class="fas fa-user"></i> Sarah Johnson</span>
+                                <span><i class="fas fa-calendar"></i> March 15, 2024</span>
+                            </div>
+                            <p>An incredible journey through Switzerland's most breathtaking peaks, sharing tips for hiking and the best viewpoints...</p>
+                            <a href="#" class="read-more" onclick="showBlogPost('swiss-alps')">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=400&h=250&fit=crop" alt="Thai Food">
+                            <div class="post-category">Food & Drink</div>
+                        </div>
+                        <div class="post-content">
+                            <h3>Street Food Paradise in Bangkok</h3>
+                            <div class="post-meta">
+                                <span><i class="fas fa-user"></i> Mike Chen</span>
+                                <span><i class="fas fa-calendar"></i> March 10, 2024</span>
+                            </div>
+                            <p>Exploring the vibrant street food scene of Thailand's capital, from pad thai to mango sticky rice...</p>
+                            <a href="#" class="read-more" onclick="showBlogPost('bangkok-food')">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="https://tripguyde.blog/wp-content/uploads/2024/11/21-cultural-travel-experiences-thatll-change-your-life-dont-miss-14-1.webp?w=1024" alt="Cultural Experience">
+                            <div class="post-category">Cultural</div>
+                        </div>
+                        <div class="post-content">
+                            <h3>Temple Hopping in Kyoto</h3>
+                            <div class="post-meta">
+                                <span><i class="fas fa-user"></i> Emma Davis</span>
+                                <span><i class="fas fa-calendar"></i> March 5, 2024</span>
+                            </div>
+                            <p>Discovering the spiritual side of Japan through its ancient temples and traditional ceremonies...</p>
+                            <a href="#" class="read-more" onclick="showBlogPost('kyoto-temples')">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="story-section">
+        <div class="content-container">
+            <div class="text-content">
+                <h1 class="main-headline fade-in">Travel can change your life</h1>
+                
+                <div class="story-text intro-text fade-in fade-in-delay">
+                    Ahoy friend! My name is Will Hatton. For many years, I traveled the world as the original Broke Backpacker, journeying to far flung lands on just $10 a day.
+                </div>
+                
+                <div class="story-text description-text fade-in fade-in-delay">
+                    Today, this site is the ultimate budget travel resource for aspiring adventurers looking to ditch their desks and hit the road in search of raw, real and meaningful adventures...
+                </div>
+                
+                <div class="button-group fade-in fade-in-delay-2">
+                    <a href="#story" class="btn btn-primary">My Story</a>
+                    <a href="#lessons" class="btn btn-secondary">Lessons from the Road</a>
+                </div>
+            </div>
+            
+            <div class="image-content">
+                <div class="motorcycle-overlay"></div>
+                <div class="adventure-badge">Adventure Awaits</div>
+                
+                <div class="quote-overlay">
+                    <div class="quote-text">"The world is a book, and those who do not travel read only one page."</div>
+                    <div class="quote-author">- Saint Augustine</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // Button click handlers
+        document.querySelector('.btn-primary').addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Navigating to My Story section...');
+            // Add your navigation logic here
+        });
+
+        document.querySelector('.btn-secondary').addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Navigating to Lessons from the Road...');
+            // Add your navigation logic here
+        });
+
+        // Add parallax effect to motorcycle image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const imageContent = document.querySelector('.image-content');
+            const rate = scrolled * -0.5;
+            
+            if (imageContent) {
+                imageContent.style.transform = translateY(${rate}px);
+            }
+        });
+
+        // Add interactive hover effects
+        const textContent = document.querySelector('.text-content');
+        textContent.addEventListener('mouseenter', () => {
+            textContent.style.transform = 'translateX(10px)';
+            textContent.style.transition = 'transform 0.3s ease';
+        });
+
+        textContent.addEventListener('mouseleave', () => {
+            textContent.style.transform = 'translateX(0)';
+        });
+    </script>
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2>Travel Blog</h2>
+            
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="filter-btn active" data-filter="all">All Posts</button>
+                <button class="filter-btn" data-filter="adventure">Adventure</button>
+                <button class="filter-btn" data-filter="cultural">Cultural</button>
+                <button class="filter-btn" data-filter="food">Food & Drink</button>
+                <button class="filter-btn" data-filter="tips">Travel Tips</button>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card" data-category="adventure">
+                    <div class="blog-image">
+                        <img src="https://www.montafon.at/1-Bilder/1-Montafon/Klettern/Zimba/image-thumb__581062__portal-header-img/Zimba-Montafon-Tourismus-Stefan-Kothner-243.jpg" alt="Mountain Hiking">
+                        <div class="blog-category">Adventure</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Essential Hiking Gear for Beginners</h3>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Alex Turner</span>
+                            <span><i class="fas fa-calendar"></i> February 28, 2024</span>
+                        </div>
+                        <p>Complete guide to choosing the right gear for your first hiking adventure, from boots to backpacks...</p>
+                        <a href="#" class="read-more" onclick="showBlogPost('hiking-gear')">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="cultural">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=250&fit=crop" alt="Local Culture">
+                        <div class="blog-category">Cultural</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Hidden Gems of Tuscany</h3>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Isabella Romano</span>
+                            <span><i class="fas fa-calendar"></i> February 25, 2024</span>
+                        </div>
+                        <p>Beyond the tourist trails: discovering authentic Italian villages and local traditions in the heart of Tuscany...</p>
+                        <a href="#" class="read-more" onclick="showBlogPost('tuscany-gems')">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="tips">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=250&fit=crop" alt="Travel Tips">
+                        <div class="blog-category">Travel Tips</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Budget Travel: How to See More for Less</h3>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> David Kim</span>
+                            <span><i class="fas fa-calendar"></i> February 20, 2024</span>
+                        </div>
+                        <p>Practical tips and tricks for traveling on a budget without compromising on experiences...</p>
+                        <a href="#" class="read-more" onclick="showBlogPost('budget-travel')">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="food">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=250&fit=crop" alt="Local Cuisine">
+                        <div class="blog-category">Food & Drink</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>A Foodie's Guide to Morocco</h3>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Amara Hassan</span>
+                            <span><i class="fas fa-calendar"></i> February 15, 2024</span>
+                        </div>
+                        <p>Exploring the rich flavors of Moroccan cuisine, from tagines to mint tea in bustling souks...</p>
+                        <a href="#" class="read-more" onclick="showBlogPost('morocco-food')">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="destinations-section">
+        <div class="container">
+            <h2>Popular Destinations</h2>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&h=300&fit=crop" alt="Switzerland">
+                        <div class="destination-overlay">
+                            <h3>Switzerland</h3>
+                            <p>5 Posts</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Thailand">
+                        <div class="destination-overlay">
+                            <h3>Thailand</h3>
+                            <p>8 Posts</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&h=300&fit=crop" alt="Japan">
+                        <div class="destination-overlay">
+                            <h3>Japan</h3>
+                            <p>6 Posts</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=400&h=300&fit=crop" alt="Italy">
+                        <div class="destination-overlay">
+                            <h3>Italy</h3>
+                            <p>7 Posts</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://i.ytimg.com/vi/VzV9i5AOBsA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDL8JrhUMgmSbbvRDi-1EWXXVyIeg" alt="Morocco">
+                        <div class="destination-overlay">
+                            <h3>Morocco</h3>
+                            <p>4 Posts</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=400&h=300&fit=crop" alt="Peru">
+                        <div class="destination-overlay">
+                            <h3>Peru</h3>
+                            <p>3 Posts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About The Broke BackPacker</h2>
+                    <p>Welcome to our travel blog, where passion for exploration meets storytelling. We are a team of dedicated travelers who believe that every journey has a story worth sharing.</p>
+                    <p>Our mission is to inspire and guide fellow adventurers by sharing authentic travel experiences, practical tips, and hidden gems from around the world. From budget backpacking to luxury escapes, we cover it all.</p>
+                    <p>Join our community of explorers and let us help you plan your next unforgettable adventure!</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=500&h=400&fit=crop" alt="Travel Team">
+                </div>
+            </div>
+
+            <div class="team-section">
+                <h3>Meet Our Travel Writers</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://i.pinimg.com/474x/4d/8a/cb/4d8acb3d351a127cc823135ff3c3d421.jpg" alt="Sarah Johnson">
+                        </div>
+                        <h4>Sarah Johnson</h4>
+                        <p>Adventure Specialist</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop" alt="Mike Chen">
+                        </div>
+                        <h4>Mike Chen</h4>
+                        <p>Food & Culture Expert</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop" alt="Emma Davis">
+                        </div>
+                        <h4>Emma Davis</h4>
+                        <p>Cultural Photographer</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Have a question about travel or want to share your own adventure story? We'd love to hear from you!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@the broke backpacker adventures.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>New York, NY</span>
+                        </div>
+                    </div>
+
+                    <div class="social-media">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual Blog Post Modal -->
+    <div id="blogPostModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="blogPostContent">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Author Bio Modal -->
+    <div id="authorModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="authorContent">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-globe"></i> the broke backpacker</h3>
+                    <p>Inspiring travelers to explore the world, one story at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Cultural</a></li>
+                        <li><a href="#">Food & Drink</a></li>
+                        <li><a href="#">Travel Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 the broke backpacker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Update active nav link
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                    
+                    // Close mobile menu
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Category filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                blogCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.5s ease-in';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+
+        function performSearch() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            if (searchTerm) {
+            
+                // In a real implementation, this would filter posts or redirect to search results
+            }
+        }
+
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Modal functionality
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close');
+
+        closeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modals.forEach(modal => modal.style.display = 'none');
+            });
+        });
+
+        window.addEventListener('click', (e) => {
+            modals.forEach(modal => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+        // Blog post data
+        const blogPosts = {
+            'swiss-alps': {
+                title: 'Conquering the Swiss Alps',
+                author: 'Sarah Johnson',
+                date: 'March 15, 2024',
+                image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop',
+                category: 'Adventure',
+                content: `
+                    <p>The Swiss Alps have always been on my bucket list, and finally making the journey was nothing short of magical. Standing at the base of the Matterhorn, I felt both humbled and exhilarated by the sheer majesty of these ancient peaks.</p>
+                    
+                    <p>Our adventure began in Zermatt, a charming car-free village that serves as the gateway to some of Switzerland's most iconic mountains. The crisp mountain air and the sound of cowbells in the distance immediately transported us to a different world.</p>
+                    
+                    <h3>The Ascent</h3>
+                    <p>We chose the Gornergrat railway for our first major viewpoint - a cogwheel train that climbs to over 3,000 meters above sea level. The 33-minute journey offers breathtaking views that change with every turn, from lush valleys to glaciated peaks.</p>
+                    
+                    <p>At the summit, the panoramic view includes 29 peaks over 4,000 meters high, including the Monte Rosa massif and, of course, the iconic Matterhorn. It's a view that photographs simply cannot capture - you have to experience it firsthand.</p>
+                    
+                    <h3>Hiking Adventures</h3>
+                    <p>The next day brought us to the hiking trails. We tackled the Matterhorn Glacier Trail, a moderate 6-kilometer hike that offers stunning close-up views of the Matterhorn's north face. The trail winds through alpine meadows dotted with wildflowers and provides numerous photo opportunities.</p>
+                    
+                    <p>One of the highlights was reaching the Schwarzsee (Black Lake), a small alpine lake that perfectly reflects the Matterhorn on calm days. We were lucky enough to witness this mirror effect just as the morning light hit the peak.</p>
+                    
+                    <h3>Practical Tips</h3>
+                    <ul>
+                        <li>Book accommodations well in advance, especially during peak season (July-August)</li>
+                        <li>Layer your clothing - mountain weather can change quickly</li>
+                        <li>Bring plenty of water and snacks for hiking</li>
+                        <li>Consider purchasing the Peak Pass for discounted access to mountain railways</li>
+                        <li>Don't forget sunscreen - the UV exposure is intense at high altitudes</li>
+                    </ul>
+                    
+                    <p>The Swiss Alps exceeded every expectation I had. It's a place where nature's power and beauty converge in the most spectacular way. Whether you're an experienced mountaineer or simply someone who appreciates natural beauty, the Alps will leave an indelible mark on your soul.</p>
+                `
+            },
+            'bangkok-food': {
+                title: 'Street Food Paradise in Bangkok',
+                author: 'Mike Chen',
+                date: 'March 10, 2024',
+                image: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&h=400&fit=crop',
+                category: 'Food & Drink',
+                content: `
+                    <p>Bangkok's street food scene is legendary, and after spending a week exploring the city's culinary landscape, I can confidently say it lives up to every bit of its reputation. From busy street corners to floating markets, the Thai capital offers an endless array of flavors that will challenge and delight your taste buds.</p>
+                    
+                    <h3>Where to Start</h3>
+                    <p>Begin your culinary journey at Chatuchak Weekend Market, where over 200 food stalls offer everything from traditional Thai dishes to creative fusion creations. The energy here is infectious, with vendors calling out their specialties and the aroma of grilled meats, fresh herbs, and coconut milk filling the air.</p>
+                    
+                    <p>Don't miss trying som tam (green papaya salad) from one of the northeastern Thai vendors. The combination of shredded papaya, tomatoes, green beans, and a dressing made from lime juice, fish sauce, and chilies creates a perfect balance of sweet, sour, and spicy flavors.</p>
+                    
+                    <h3>Must-Try Dishes</h3>
+                    <p><strong>Pad Thai:</strong> While it might seem like a tourist trap, finding authentic pad thai on Bangkok's streets is a revelation. Look for vendors with long lines of locals - they know where the good stuff is.</p>
+                    
+                    <p><strong>Tom Yum Goong:</strong> This iconic soup combines lemongrass, kaffir lime leaves, galangal, lime juice, fish sauce, and crushed chili peppers with prawns. Each spoonful is an explosion of Thai flavors.</p>
+                    
+                    <p><strong>Mango Sticky Rice:</strong> For dessert, nothing beats khao niao mamuang - sweet sticky rice topped with fresh mango slices and coconut milk. It's the perfect end to any street food adventure.</p>
+                    
+                    <h3>Hidden Gems</h3>
+                    <p>Venture beyond the main tourist areas to discover true local favorites. In the Thonglor district, I found a small family-run stall that serves the best boat noodles I've ever tasted. The rich, dark broth and tender beef create a comfort food experience that rivals any restaurant.</p>
+                    
+                    <p>Another gem is the late-night food scene around Saphan Phut Market. After 10 PM, the area transforms into a street food paradise with vendors serving everything from grilled seafood to exotic fruits you've never heard of.</p>
+                    
+                    <h3>Food Safety Tips</h3>
+                    <ul>
+                        <li>Eat where the locals eat - busy stalls with high turnover are usually safer</li>
+                        <li>Observe food preparation - fresh ingredients and proper cooking are key</li>
+                        <li>Start with milder dishes and gradually work up to spicier options</li>
+                        <li>Stay hydrated, but stick to bottled water or fresh coconut water</li>
+                        <li>Trust your instincts - if something doesn't look right, skip it</li>
+                    </ul>
+                    
+                    <p>Bangkok's street food culture is more than just eating - it's about community, tradition, and the joy of sharing good food. Every meal tells a story, and every vendor has perfected their craft over generations. Come hungry, come curious, and prepare for a culinary adventure that will forever change how you think about Thai cuisine.</p>
+                `
+            }
+        };
+
+        // Author data
+        const authors = {
+            'Sarah Johnson': {
+                image: 'https://images.unsplash.com/photo-1494790108755-2616c9dc9b3c?w=200&h=200&fit=crop',
+                bio: 'Adventure travel specialist with over 8 years of experience exploring mountain ranges worldwide. Sarah has summited peaks on four continents and specializes in high-altitude trekking and mountaineering.',
+                social: {
+                    instagram: '@sarahjohnsonadventures',
+                    twitter: '@sarah_adventures'
+                }
+            },
+            'Mike Chen': {
+                image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop',
+                bio: 'Culinary explorer and food photographer who has traveled to over 30 countries documenting local cuisines. Mike believes that food is the universal language that connects all cultures.',
+                social: {
+                    instagram: '@mikechenfoods',
+                    twitter: '@foodie_mike'
+                }
+            },
+            'Emma Davis': {
+                image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop',
+                bio: 'Cultural photographer and anthropologist who captures the essence of local traditions and ceremonies. Emma has lived with indigenous communities across Asia and South America.',
+                social: {
+                    instagram: '@emmadavisphoto',
+                    twitter: '@cultural_emma'
+                }
+            }
+        };
+
+        // Show blog post function
+        function showBlogPost(postId) {
+            const post = blogPosts[postId];
+            if (!post) return;
+
+            const modal = document.getElementById('blogPostModal');
+            const content = document.getElementById('blogPostContent');
+
+            content.innerHTML = `
+                <article class="full-blog-post">
+                    <div class="post-header">
+                        <img src="${post.image}" alt="${post.title}" class="post-featured-image">
+                        <div class="post-header-content">
+                            <span class="post-category-tag">${post.category}</span>
+                            <h1>${post.title}</h1>
+                            <div class="post-author-info">
+                                <img src="${authors[post.author].image}" alt="${post.author}" class="author-avatar">
+                                <div class="author-details">
+                                    <span class="author-name" onclick="showAuthorBio('${post.author}')">${post.author}</span>
+                                    <span class="post-date">${post.date}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        ${post.content}
+                    </div>
+                    <div class="post-footer">
+                        <div class="author-bio-snippet">
+                            <h4>About the Author</h4>
+                            <div class="author-snippet">
+                                <img src="${authors[post.author].image}" alt="${post.author}" class="author-snippet-image">
+                                <div>
+                                    <h5>${post.author}</h5>
+                                    <p>${authors[post.author].bio}</p>
+                                    <button class="btn-secondary" onclick="showAuthorBio('${post.author}')">View Full Bio</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="related-posts">
+                            <h4>Related Posts</h4>
+                            <div class="related-posts-grid">
+                                <div class="related-post">
+                                    <img src="https://images.unsplash.com/photo-1464822759844-d150baec93de?w=200&h=150&fit=crop" alt="Hiking Tips">
+                                    <h5>Essential Hiking Gear for Beginners</h5>
+                                </div>
+                                <div class="related-post">
+                                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=200&h=150&fit=crop" alt="Cultural Travel">
+                                    <h5>Hidden Gems of Tuscany</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            `;
+
+            modal.style.display = 'block';
+        }
+
+        // Show author bio function
+        function showAuthorBio(authorName) {
+            const author = authors[authorName];
+            if (!author) return;
+
+            const modal = document.getElementById('authorModal');
+            const content = document.getElementById('authorContent');
+
+            content.innerHTML = `
+                <div class="author-bio-full">
+                    <div class="author-header">
+                        <img src="${author.image}" alt="${authorName}" class="author-bio-image">
+                        <div class="author-info">
+                            <h2>${authorName}</h2>
+                            <p class="author-bio">${author.bio}</p>
+                            <div class="author-social">
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i> ${author.social.instagram}</a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i> ${author.social.twitter}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="author-posts">
+                        <h3>Recent Posts by ${authorName}</h3>
+                        <div class="author-posts-list">
+                            <!-- This would dynamically populate with the author's posts -->
+                            <div class="author-post-item">
+                                <h4>Recent Adventures and Travel Tips</h4>
+                                <p>Explore the latest stories and insights from ${authorName}'s travels around the world.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            modal.style.display = 'block';
+        }
+
+        // Contact form submission
+        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            // In a real implementation, this would send data to a server
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            e.target.reset();
+        });
+
+        // Smooth scrolling for all anchor links
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add CSS animation keyframes
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.post-card, .blog-card, .destination-card, .team-member');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+
+
+</body>
+</html>
